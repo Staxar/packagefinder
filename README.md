@@ -1,71 +1,84 @@
-# packagefinder README
+# VS Code Extension: NPM & Yarn Package Search and Install
 
-This is the README for your extension "packagefinder". After writing up a brief description, we recommend including the following sections.
+Welcome to the **Package Finder** VS Code extension! This tool enhances your development workflow by allowing you to search for, install npm and Yarn packages directly within Visual Studio Code. Whether you're using npm or Yarn, this extension streamlines the process of finding and adding packages to your projects.
 
 ## Features
 
-Describe specific features of your extension including screenshots of your extension in action. Image paths are relative to this README file.
+- **Search for Packages:** Quickly search for npm or Yarn packages without leaving VS Code.
+- **Install Packages:** Install packages directly from the search results.
+- **View Package Details:** Get detailed information about packages, including version history.
+  - **TODO ** **Manage Dependencies:** Easily add/remove/update packages to your `package.json` or `yarn.lock`.
 
-For example if there is an image subfolder under your extension project workspace:
+## Installation
 
-\!\[feature X\]\(images/feature-x.png\)
+1. Open Visual Studio Code.
+2. Go to the Extensions view by clicking on the Extensions icon in the Activity Bar on the side of the window.
+3. Search for `Package Finder`.
+4. Click **Install**.
 
-> Tip: Many popular extensions utilize animations. This is an excellent way to show off your extension! We recommend short, focused animations that are easy to follow.
+Alternatively, you can install it from the command line:
 
-## Requirements
+```bash
+code --install-extension <extension-id>
+```
 
-If you have any requirements or dependencies, add a section describing those and how to install and configure them.
+Replace `<extension-id>` with the ID of the extension, which you can find on the extension's page in the VS Code marketplace.
 
-## Extension Settings
+## Usage
 
-Include if your extension adds any VS Code settings through the `contributes.configuration` extension point.
+### Search for Packages
 
-For example:
+1. Open the Command Palette by pressing `Ctrl+Shift+i` (or `Cmd+Shift+i` on macOS).
+2. Type `Package Finder` and select it.
+3. Enter the name or keyword for the package you want to search for.
+4. Browse the search results in the provided list.
 
-This extension contributes the following settings:
+### Install Packages
 
-* `myExtension.enable`: Enable/disable this extension.
-* `myExtension.thing`: Set to `blah` to do something.
+1. From the search results, select the package you want to install.
+2. Hit enter and **Install** the package.
 
-## Known Issues
+### View Package Details
 
-Calling out known issues can help limit users opening duplicate issues against your extension.
+1. Version of every package is next to name.
 
-## Release Notes
+### Managing Dependencies
 
-Users appreciate release notes as you update your extension.
+- **Install New Packages:** Use the search feature to find and install new packages.
 
-### 1.0.0
+## Configuration
 
-Initial release of ...
+You can configure the extension through the VS Code settings. Go to `File` > `Preferences` > `Settings` and search for `Package Finder` to adjust the extension's settings.
 
-### 1.0.1
+## Troubleshooting
 
-Fixed issue #.
+- **Search Results Not Appearing:** Ensure you have a stable internet connection and try restarting VS Code.
+- **Installation Issues:** Verify that npm or Yarn is correctly installed and configured on your system.
 
-### 1.1.0
+For further assistance, please refer to the [FAQ](#faq) or open an issue on the [GitHub repository](#repository).
 
-Added features X, Y, and Z.
+## FAQ
+
+**Q: Can I use this extension with both npm and Yarn?**
+
+A: Yes, you can search for and install packages for both npm and Yarn.
+
+**Q: How do I uninstall the extension?**
+
+A: Go to the Extensions view, find the `Package Finder` extension, and click the **Uninstall** button.
+
+**Q: Does this extension support private npm registries?**
+
+A: This extension supports searching and installing from public npm registries. For private registries, additional configuration may be required.
+
+## Repository
+
+Find the source code, report issues, or contribute to the project on [GitHub](https://github.com/Staxar/packagefinder).
+
+## License
+
+This extension is licensed under the [MIT License](LICENSE).
 
 ---
 
-## Following extension guidelines
-
-Ensure that you've read through the extensions guidelines and follow the best practices for creating your extension.
-
-* [Extension Guidelines](https://code.visualstudio.com/api/references/extension-guidelines)
-
-## Working with Markdown
-
-You can author your README using Visual Studio Code. Here are some useful editor keyboard shortcuts:
-
-* Split the editor (`Cmd+\` on macOS or `Ctrl+\` on Windows and Linux).
-* Toggle preview (`Shift+Cmd+V` on macOS or `Shift+Ctrl+V` on Windows and Linux).
-* Press `Ctrl+Space` (Windows, Linux, macOS) to see a list of Markdown snippets.
-
-## For more information
-
-* [Visual Studio Code's Markdown Support](http://code.visualstudio.com/docs/languages/markdown)
-* [Markdown Syntax Reference](https://help.github.com/articles/markdown-basics/)
-
-**Enjoy!**
+Thank you for using the **Package Finder** VS Code extension! We hope it makes your development process smoother and more efficient. If you have any questions or feedback, feel free to reach out through the GitHub repository.
