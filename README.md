@@ -7,28 +7,12 @@ Welcome to the **Package Finder** VS Code extension! This tool enhances your dev
 - **Search for Packages:** Quickly search for npm or Yarn packages without leaving VS Code.
 - **Install Packages:** Install packages directly from the search results.
 - **View Package Details:** Get detailed information about packages, including version history.
-  - **TODO ** **Manage Dependencies:** Easily add/remove/update packages to your `package.json` or `yarn.lock`.
-
-## Installation
-
-1. Open Visual Studio Code.
-2. Go to the Extensions view by clicking on the Extensions icon in the Activity Bar on the side of the window.
-3. Search for `Package Finder`.
-4. Click **Install**.
-
-Alternatively, you can install it from the command line:
-
-```bash
-code --install-extension <extension-id>
-```
-
-Replace `<extension-id>` with the ID of the extension, which you can find on the extension's page in the VS Code marketplace.
 
 ## Usage
 
 ### Search for Packages
 
-1. Open the Command Palette by pressing `Ctrl+Shift+i` (or `Cmd+Shift+i` on macOS).
+1. Open the Command Palette by pressing `Ctrl+Alt+i` (or `Cmd+Shift+i` on macOS).
 2. Type `Package Finder` and select it.
 3. Enter the name or keyword for the package you want to search for.
 4. Browse the search results in the provided list.
@@ -55,7 +39,7 @@ You can configure the extension through the VS Code settings. Go to `File` > `Pr
 - **Search Results Not Appearing:** Ensure you have a stable internet connection and try restarting VS Code.
 - **Installation Issues:** Verify that npm or Yarn is correctly installed and configured on your system.
 
-For further assistance, please refer to the [FAQ](#faq) or open an issue on the [GitHub repository](#repository).
+For further assistance, please refer to the [FAQ](#faq) or open an issue on the [GitHub repository](https://github.com/Staxar/packagefinder).
 
 ## FAQ
 
@@ -82,3 +66,9 @@ This extension is licensed under the [MIT License](https://github.com/Staxar/pac
 ---
 
 Thank you for using the **Package Finder** VS Code extension! We hope it makes your development process smoother and more efficient. If you have any questions or feedback, feel free to reach out through the GitHub repository.
+
+Buy me a coffee
+
+---
+<img src="https://github.com/Staxar/packagefinder/blob/master/images/bmc_qr.png" alt="buymeacoffe" width="250" height="250">
+
