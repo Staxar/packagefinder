@@ -1,0 +1,11 @@
+{
+  "name": "Staxar",
+  "version": "0.0.1",
+  "publisher": "Staxar",
+  "engines": {
+    "vscode": "^1.93.0"
+  },
+  "scripts": {
+    "vscode:prepublish": "tsc"
+  }
+}

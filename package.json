@@ -8,6 +8,10 @@
   "engines": {
     "vscode": "^1.93.0"
   },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Staxar/packagefinder"
+  },
   "categories": [
     "Programming Languages",
     "Extension Packs",
