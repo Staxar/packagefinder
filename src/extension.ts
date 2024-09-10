@@ -1,54 +1,59 @@
-// The module 'vscode' contains the VS Code extensibility API
-// Import the module and reference it with the alias vscode in your code below
 import * as vscode from "vscode";
 import axios from "axios";
-import { exec } from "child_process";
-import { stderr, stdout } from "process";
 
-async function searchPackage(query: string) {
+type npmResultsType = {
+  name: string;
+  version: string;
+};
+
+async function searchPackage(
+  query: string
+): Promise<Array<npmResultsType> | null> {
   const npmUrl = `https://api.npms.io/v2/search?q=${encodeURIComponent(query)}`;
 
   try {
-    // Wyszukiwanie w npm
     const npmResponse = await axios.get(npmUrl);
-    console.log(npmResponse);
-    const npmResults = npmResponse.data.results.map(
-      (pkg: any) => pkg.package.name
-    );
-    console.log(npmResults);
-    return {
-      npm: npmResults,
-    };
+    const npmResults = npmResponse.data.results.map((pkg: any) => ({
+      name: pkg.package.name,
+      version: pkg.package.version,
+    }));
+
+    return npmResults;
   } catch (error) {
-    vscode.window.showErrorMessage(
-      "Wystąpił błąd podczas wyszukiwania pakietów."
-    );
+    vscode.window.showErrorMessage("Error while searching for npm packages");
     console.error(error);
     return null;
   }
 }
-function installPackage(packageName: string) {
-  const terminal = vscode.window.createTerminal(`Install ${packageName}`);
 
+function installPackage(packageName: string, installer: "npm" | "yarn") {
+  const installCommand = installer === "npm" ? "npm install" : "yarn add";
+
+  const terminal =
+    vscode.window.activeTerminal ||
+    vscode.window.createTerminal(`Install ${packageName}`);
   terminal.show();
-  terminal.sendText(`npm install ${packageName}`);
+  terminal.sendText(`${installCommand} ${packageName}`);
 }
 
-// This method is called when your extension is activated
-// Your extension is activated the very first time the command is executed
-export function activate(context: vscode.ExtensionContext) {
-  // Use the console to output diagnostic information (console.log) and errors (console.error)
-  // This line of code will only be executed once when your extension is activated
-  console.log('Congratulations, your extension "packagefinder" is now active!');
+async function pickPackageManager(): Promise<"npm" | "yarn" | undefined> {
+  const packageManagers: ("npm" | "yarn")[] = ["npm", "yarn"];
 
-  // The command has been defined in the package.json file
-  // Now provide the implementation of the command with registerCommand
-  // The commandId parameter must match the command field in package.json
+  const selection = await vscode.window.showQuickPick(packageManagers, {
+    placeHolder: "Select package manager",
+    title: "What do you want to use to install the package?",
+  });
+
+  if (selection === "npm" || selection === "yarn") {
+    return selection;
+  }
+  return undefined;
+}
+
+export function activate(context: vscode.ExtensionContext) {
   const disposable = vscode.commands.registerCommand(
-    "packagefinder.helloWorld",
+    "packagefinder.finder",
     async () => {
-      // The code you place here will be executed every time your command is executed
-      // Display a message box to the user
       const searchTerm = await vscode.window.showInputBox({
         prompt: "Enter npm package name to search",
       });
@@ -57,32 +62,40 @@ export function activate(context: vscode.ExtensionContext) {
         vscode.window.showErrorMessage("Search term cannot be empty!");
         return;
       }
+
       const results = await searchPackage(searchTerm);
-      if (results) {
-        const npmResults = results.npm.join(", ");
+
+      if (results && results.length > 0) {
         const selectedPackage = await vscode.window.showQuickPick(
-          results.npm.concat(results.npm),
+          results.map((item) => ({
+            label: item.name,
+            description: `Version: ${item.version}`,
+          })),
           {
             placeHolder: "Pick one package",
           }
         );
 
         if (selectedPackage) {
-          const installConfirmation =
-            await vscode.window.showInformationMessage(
-              `Do you want to install package: ${selectedPackage}`,
-              { modal: true },
-              "Yes",
-              "No"
-            );
+          try {
+            const selectedManager = await pickPackageManager();
 
-          if (installConfirmation) {
-            installPackage(selectedPackage);
-          } else {
-            vscode.window.showInformationMessage("Reject install package");
+            if (selectedManager) {
+              vscode.window.showInformationMessage(
+                `Installing package: ${selectedPackage.label} using ${selectedManager}...`
+              );
+              installPackage(selectedPackage.label, selectedManager);
+            } else {
+              vscode.window.showInformationMessage(
+                `The installation of package: ${selectedPackage.label} was canceled.`
+              );
+            }
+          } catch (error) {
+            vscode.window.showErrorMessage(`An error occurred: ${error}`);
           }
         }
-        vscode.window.showInformationMessage(`NPM: ${npmResults}`);
+      } else {
+        vscode.window.showErrorMessage("No results found for your search.");
       }
     }
   );
@@ -90,5 +103,4 @@ export function activate(context: vscode.ExtensionContext) {
   context.subscriptions.push(disposable);
 }
 
-// This method is called when your extension is deactivated
 export function deactivate() {}
