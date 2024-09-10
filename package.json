@@ -6,7 +6,7 @@
   "icon": "images/packagefinder.webp",
   "publisher": "Staxar",
   "engines": {
-    "vscode": "^1.93.0"
+    "vscode": ">=1.80.0"
   },
   "repository": {
     "type": "git",
