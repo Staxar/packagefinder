@@ -77,7 +77,7 @@ Find the source code, report issues, or contribute to the project on [GitHub](ht
 
 ## License
 
-This extension is licensed under the [MIT License](LICENSE).
+This extension is licensed under the [MIT License](https://github.com/Staxar/packagefinder/blob/master/LICENSE).
 
 ---
 
