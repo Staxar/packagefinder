@@ -4,11 +4,13 @@
   "description": "A VS Code extension to search for and install npm or yarn packages.",
   "version": "0.0.1",
   "icon": "images/packagefinder.webp",
-  "publisher": "Marcin Domagala",
+  "publisher": "Staxar",
   "engines": {
     "vscode": "^1.93.0"
   },
   "categories": [
+    "Programming Languages",
+    "Extension Packs",
     "Other"
   ],
   "activationEvents": [],
