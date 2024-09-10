@@ -7,3 +7,11 @@ Check [Keep a Changelog](http://keepachangelog.com/) for recommendations on how 
 ## [Unreleased]
 
 - Initial release
+
+### Added
+
+- v0.0.2 Update README.md file
+
+### Fixed
+
+- Fix shortcuts.
