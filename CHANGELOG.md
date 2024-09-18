@@ -11,7 +11,13 @@ Check [Keep a Changelog](http://keepachangelog.com/) for recommendations on how 
 ### Added
 
 - v0.0.2 Update README.md file
+- v0.0.3 Update README.md file
+
+### Changed
+
+- Downgrade vs engines ">=1.80.0"
 
 ### Fixed
 
 - Fix shortcuts.
+- Fixed a bug where the image was not showing in README.md file
