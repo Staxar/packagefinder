@@ -11,7 +11,7 @@ Check [Keep a Changelog](http://keepachangelog.com/) for recommendations on how 
 ### Added
 
 - v0.0.2 Update README.md file
-- v0.0.3 Update README.md file
+- v0.0.3 Update README.md & package.json files
 
 ### Changed
 
