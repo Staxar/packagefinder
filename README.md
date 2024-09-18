@@ -12,10 +12,10 @@ Welcome to the **Package Finder** VS Code extension! This tool enhances your dev
 
 ### Search for Packages
 
-1. Open the Command Palette by pressing `Ctrl+Alt+i` (or `Cmd+Shift+i` on macOS).
-2. Type `Package Finder` and select it.
-3. Enter the name or keyword for the package you want to search for.
-4. Browse the search results in the provided list.
+1. Press `Ctrl+Alt+i` (or `Cmd+Shift+i` on macOS) to open a search terminal.
+   1.1 Optional: Open Commant Palette `Ctrl+Shift+P` (or `Shift + Command + P` on macOS) and type `Package Finder`
+2. Enter the name or keyword for the package you want to search for.
+3. Browse the search results in the provided list.
 
 ### Install Packages
 
@@ -70,5 +70,5 @@ Thank you for using the **Package Finder** VS Code extension! We hope it makes y
 Buy me a coffee
 
 ---
-<img src="https://github.com/Staxar/packagefinder/blob/master/images/bmc_qr.png" alt="buymeacoffe" width="250" height="250">
 
+<img src="https://raw.githubusercontent.com/Staxar/packagefinder/master/images/bmc_qr.png" alt="buymeacoffe" width="250" height="250">
