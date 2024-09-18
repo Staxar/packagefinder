@@ -2,7 +2,7 @@
   "name": "packagefinder",
   "displayName": "Package Finder",
   "description": "A VS Code extension to search for and install npm or yarn packages.",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "icon": "images/packagefinder.webp",
   "publisher": "Staxar",
   "engines": {
