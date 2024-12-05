@@ -1,9 +1,5 @@
 # Change Log
 
-All notable changes to the "packagefinder" extension will be documented in this file.
-
-Check [Keep a Changelog](http://keepachangelog.com/) for recommendations on how to structure this file.
-
 ## [Unreleased]
 
 - Initial release
@@ -12,10 +8,12 @@ Check [Keep a Changelog](http://keepachangelog.com/) for recommendations on how 
 
 - v0.0.2 Update README.md file
 - v0.0.3 Update README.md & package.json files
+- v0.0.4 Add better user experience with using addon. User can select package manager and save in workspace context.
 
 ### Changed
 
 - Downgrade vs engines ">=1.80.0"
+- README.me
 
 ### Fixed
 

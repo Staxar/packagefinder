@@ -2,7 +2,7 @@
   "name": "packagefinder",
   "displayName": "Package Finder",
   "description": "A VS Code extension to search for and install npm or yarn packages.",
-  "version": "0.0.3",
+  "version": "0.0.4",
   "icon": "images/packagefinder.webp",
   "publisher": "Staxar",
   "engines": {
@@ -23,14 +23,30 @@
     "commands": [
       {
         "command": "packagefinder.finder",
-        "title": "Package Finder"
+        "title": "Search package",
+        "category": "Package Finder"
+      },
+      {
+        "command": "packagefinder.selectPackageManager",
+        "title": "Select Package Manager",
+        "category": "Package Finder"
+      },
+      {
+        "command": "packagefinder.clearWorkSpaceData",
+        "title": "Clear WorkSpace Package Manager data",
+        "category": "Package Finder"
       }
     ],
     "keybindings": [
       {
         "command": "packagefinder.finder",
-        "key": "ctrl+alt+i",
-        "mac": "shift+cmd+i"
+        "key": "ctrl+alt+p",
+        "mac": "shift+cmd+p"
+      },
+      {
+        "command": "packagefinder.selectPackageManager",
+        "key": "ctrl+alt+m",
+        "mac": "shift+cmd+m"
       }
     ]
   },

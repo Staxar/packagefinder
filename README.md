@@ -8,6 +8,8 @@ Welcome to the **Package Finder** VS Code extension! This tool enhances your dev
 - **Install Packages:** Install packages directly from the search results.
 - **View Package Details:** Get detailed information about packages, including version history.
 
+![Features](https://github.com/Staxar/packagefinder/blob/master/images/packageFinder.gif?raw=true)
+
 ## Usage
 
 ### Search for Packages
